@@ -55,11 +55,3 @@ A reliable and easy to use inventory manager web application. Myinventory is des
 
 We welcome contributions to improve the MyInventory application. If you find any bugs or have ideas for new features, feel free to open an issue or submit a pull request.
   
-# Gallery
-* <img width="960" alt="Screenshot 2023-08-11 034827" src="https://github.com/armaanjaj/myinventory/assets/113659942/db577ce3-b823-4e44-916f-abe2a27cfe6d">
-* <img width="958" alt="Screenshot 2023-08-11 034913" src="https://github.com/armaanjaj/myinventory/assets/113659942/8a309b97-9fd7-46ad-903b-f98dce59313a">
-* <img width="960" alt="Screenshot 2023-08-11 034930" src="https://github.com/armaanjaj/myinventory/assets/113659942/3ba35d53-e950-4288-bdac-bc1577c4b4f3">
-* <img width="958" alt="Screenshot 2023-08-11 035248" src="https://github.com/armaanjaj/myinventory/assets/113659942/575972a7-5048-45e4-a193-fd15365d0622">
-* <img width="959" alt="Screenshot 2023-08-11 035316" src="https://github.com/armaanjaj/myinventory/assets/113659942/2581e7c0-5179-4ca1-ae01-ec0c503b0f35">
-* <img width="959" alt="Screenshot 2023-08-11 035411" src="https://github.com/armaanjaj/myinventory/assets/113659942/bce1fe8d-c63f-4481-af65-6a3a50fd5882">
-* <img width="958" alt="Screenshot 2023-08-11 035518" src="https://github.com/armaanjaj/myinventory/assets/113659942/3619f2d7-a128-420d-a49c-bb156c069f4e">
