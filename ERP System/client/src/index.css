@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #028090;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #004d6c;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #05668D;
+}
+
+/* ===================================================== */
+/*                    PRINT SETTINGS                     */
+/* ===================================================== */
+
+/* Default page setup for ALL printing (bin card + issue note) */
+@page {
+  size: Letter;
+  margin: 10mm;
+}
+
+/* Print-only container should be invisible on screen */
+.print-area {
+  display: none;
+}
+
+/* ===================================================== */
+/*                 GLOBAL PRINT RULES                    */
+/* ===================================================== */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Prevent browser auto-scaling */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Force exact sizing, no auto-fit */
+  html {
+    zoom: 1;
+    transform: scale(1);
+    transform-origin: top left;
+  }
+
+  body, html {
+    width: 8.5in;
+    height: 11in;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide React UI when printing */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Show print template only on paper */
+  .print-area {
+    display: block !important;
+    width: calc(8.5in-20mm);
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  /* Ensure all tables use fixed layout and explicit sizing */
+  table {
+    width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+    /*page-break-inside: auto;*/
+  }
+
+  /* Prevent cell content from forcing expansion */
+  table td,
+  table th {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+  }
+
+  /* Prevent page breaks inside table rows */
+  table tr {
+    page-break-inside: avoid;
+  }
+
+  /* Bin card container (if you use it) */
+  .print-container {
+    margin: 0;
+    padding: 0 4mm;
+  }
+
+  /* ================================================= */
+  /*          ISSUE NOTE – STURDY 35-ROW GRID         */
+  /* ================================================= */
+
+  /* Outer table */
+  .issue-print table.issue-grid {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #000;
+    table-layout: fixed;
+  }
+
+  /* All header + data cells */
+  .issue-print table.issue-grid th,
+  .issue-print table.issue-grid td {
+    border: 1px solid #000;
+    padding: 0 4px;
+    font-size: 11px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* keep each row single line */
+  }
+
+  /* Equal row height for every row – like exercise book lines */
+  .issue-print table.issue-grid tr {
+    height: 5mm;
+    page-break-inside: avoid;
+  }
+
+  /* Make header repeat if there are page breaks */
+  .issue-print thead {
+    display: table-header-group;
+  }
+}
